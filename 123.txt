@@ -15,5 +15,80 @@ touch filename 若filename不存在则创建，否则修改文件时间戳
 stat filename 查看文件属性状态
 rm 删除文件  rm -r 删除目录    rm -f强制删除不提示    rm  -i交互模式
 mkdir 创建目录    mkdir  -p 递归创建
+cp：源目标，将源位置文件复制到目标位置   -r复制目录文件   -p保留源权限
+mv：源目标，将源位置文件移动到目标位置，参数同上， mv 文件名，新文件名，给文件改名
+scp：源目标，将源位置文件复制到目标位置，需要。ssh协议及服务支撑
+目标源格式：用户名@主机地址：端口号（默认22）/文件路径
+wc：统计文件内容  -l统计行   -w统计单词数    -c统计字符数
+cut：按列显示    -d指定列分割符" ",-f显示列编号从1开始
+file：查看文件类型
+greep：过滤内容 -v匹配之外过滤（反选），匹配正则表达式
+>> :输出重定向并追加
+> ：输出重定向并覆盖
 
+
+用户操作：
+
+whoami：查看当前工作用户名
+who ：查看当前登陆用户
+/etc/passwd ：该文件保存系统中的所有用户信息
+/etc/shadow ：该文件保存用户的密码
+/etc/group ：该文件保存用户组的信息
+useradd ：创建用户  -d指定用户家目录   -s指定用户登陆shall   -g指定用户组id
+userdel :删除用户   -r删除的同时删除家目录以及邮件文件
+usermod ：修改用户  -a追加   -G附加组   -g默认组   -d修改用户家目录  -s修改用户登陆shall
+passwd：修改用户密码，如果不跟用户名则修改当前
+su ：切换用户
+sudo：临时获取权限
+visudo：编辑sudo设置
+exit：用户退出
+groupadd：创建组
+groupdel：删除组
+
+
+
+权限操作
+
+
+chmod ：修改权限 u/拥有者  g/拥有组   o/其他  a/所有人   +/- 新增/减少 （rwxst）  读/写/执行二进制临时/以及临时目录权限 r=4  w=2  x=1  suid=4  sgid=2  sticky=1
+umask=0002
+chmod nnn filename 按照指定的权限模型授予文件权限 读， 写， 执行
+chmod nnnnn filename 按照指定的权限模型授予法ilename权限
+chown 修改文件所属信息用户
+变化形式：.|:username username.|
+           |:username .|
+           |:username 
+chgrp
+getfacl
+setfacl -m -x -d
+u/g ：username/groupname：rwx
+
+
+软件安装及服务操作
+源仓库安装方式：yum install softpackage[redhat,centos.fedora]
+               或apt-get install softpackage
+
+
+服务器管理目录：
+[centos 7及以上，radhat 7及以上，faddore 16及以上]
+systemctl start /stop/reload/restart/enable/disable/status servicename
+启动/停止/重置/重启/开机启动
+
+
+计划任务
+一次性计划任务：at 时间 回车 任务命令  回车....ctrl+d退出
+atq：查询任务
+atrm：删除任务
+周期性计划任务：
+crantab 回车
+分  时  日  月  周  命令回车....
+ctrl+d 退出
+* 通配   -区间    /步进  ，同时
+
+
+
+
+
+
+ 
 
