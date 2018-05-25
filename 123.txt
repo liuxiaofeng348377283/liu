@@ -86,6 +86,44 @@ ctrl+d 退出
 * 通配   -区间    /步进  ，同时
 
 
+git操作
+1创建目录
+2进入目录
+3创建仓库
+4操作文件
+5加入暂存区
+6提交 注释（必须使用 -m参数）
+命令均在仓库中运行：git init 创建仓库
+status 查看仓库状态
+reflog 查看操作日志
+log 产看仓库日志
+reset....hard 强制退回  HEAD 指向当前版本   ^向前一个  ～n向前n个  亦可使用commitid
+add 加入暂存区 *全部通配，亦可使用正则匹配
+commit 提交 -m注释
+checkout 切换分支  -b创建分支并切换
+merge 合并指定分支到当前分支
+branch 查看或创建分支（后面跟名字创建，不跟为查看）  -d删除分支 
+
+
+远程仓库操作：clone 在当前目录下克隆一个远程仓库，该仓库文件夹名称与远程仓库同名，以下命令在仓库文件夹下执行
+remote add 添加远程别名
+push +别名 推送当前仓库内容至远程仓库
+ssh-keygen -t rsa -C +用户名
+根据用户名创建rsa密匙对
+  
+
+python环境搭建
+1 去www.Python.org 下载python源码包
+2 解档
+3进入解档目录
+4执行yum install -y gcc
+5执行yum install -y zlib*
+6执行 ./configure
+7执行make
+8执行sudo make install
+9执行ln -s /usr/local/bin/python3  /usr/bin/python3
+
+
 
 
 
